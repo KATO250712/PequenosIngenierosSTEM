@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pequeños Ingenieros — Retos STEM para Padres e Hijos</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Pequeños Ingenieros: retos STEM para padres e hijos, proyectos educativos, tiempo de calidad y aprendizaje divertido. Construye, aprende y comparte.">
+  <meta property="og:title" content="Pequeños Ingenieros — Retos STEM para Padres e Hijos">
+  <meta property="og:description" content="Desafíos, misiones y proyectos STEM para hacer en familia. Comparte tus resultados y reta a otros padres.">
+  <meta property="og:image" content="assets/img/preview.jpg">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Pequeños Ingenieros</h1>
+    <p>Retos STEM para padres e hijos: aprende, construye y comparte tiempo de calidad.</p>
+    <button class="btn" onclick="compartirSitio()">Reta a otro papá 💪</button>
+  </header>
+
+  <div class="container">
+
+    <!-- BUSCADOR -->
+    <section class="search-box">
+      <input type="text" id="buscador" placeholder="Buscar proyectos, retos o materiales...">
+    </section>
+
+    <!-- GRID DE PROYECTOS -->
+    <section class="seccion">
+      <h2>Proyectos Destacados</h2>
+
+      <div class="grid" id="contenedor-proyectos">
+        <!-- Se llenará desde app.js -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN PRESENTACIÓN -->
+    <section class="seccion">
+      <h2>¿Qué es Pequeños Ingenieros?</h2>
+      <div class="card">
+        <p>
+          Pequeños Ingenieros nació del deseo de crear 
+          <strong>momentos de calidad entre padre e hijo</strong> mediante proyectos STEM simples,
+          seguros y divertidos.  
+        </p>
+        <p>
+          Cada reto está diseñado para construir juntos, aprender jugando y compartir los resultados
+          en comunidad. La misión es formar niños creativos, seguros y con pensamiento científico.
+        </p>
+        <p>Este proyecto está construido en código abierto para que pueda crecer con tu ayuda.</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN RETO SOCIAL -->
+    <section class="seccion">
+      <h2>Reto del Día: Construye y Comparte 🛠️</h2>
+      <div class="card">
+        <p>Haz el proyecto con tu hijo, tomen una foto y compártanla en redes etiquetando:</p>
+        <p><strong>#PequeñosIngenieros</strong></p>
+        <p>Después... ¡Reta a otro papá para que también pase tiempo de calidad con sus hijos!</p>
+        <button class="btn" onclick="compartirReto()">Compartir el Reto 📣</button>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2025 Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 México (CC BY-NC-SA 4.0).
+ · By ISC.Miguel Angel Ruiz Ramirez - Quecholac, Puebla MX
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
