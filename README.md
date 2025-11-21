@@ -34,17 +34,7 @@ pero sí recordarán lo que construyeron contigo.
 
 ---
 
-## 🚀 Cómo empezar
-
-1. Clona el repositorio:  
-   ```bash
-   git clone https://github.com/KATO250712/PequenosIngenierosSocial.git
-
-2. Abre public/index.html en tu navegador para ver la plataforma base.
-
-
-3. Para cambios en CSS o JS: modifica los archivos dentro de public/css/ o public/js/ y recarga la página.
-
+## 🚀 Cómo empeza
 
 
 
@@ -84,6 +74,7 @@ Ver LICENSE para más información.
 
 **Contacto:** Miguel Ángel Ruiz Ramírez  
 **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/miguel-angel-ruiz-ramirez-8a5991370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+
 
 
 
