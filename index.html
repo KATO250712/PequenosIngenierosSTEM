@@ -1,117 +1,80 @@
-
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Proyecto 001 — Brazo Hidráulico | Pequeños Ingenieros</title>
-  <meta name="description" content="Brazo Hidráulico: proyecto STEM para padres e hijos. Aprende principios de hidráulica con jeringas y mangueras." />
-  <meta property="og:title" content="Brazo Hidráulico — Pequeños Ingenieros" />
-  <meta property="og:description" content="Construye un brazo hidráulico con materiales caseros. Paso a paso, galería y retos gamificados." />
-  <meta property="og:image" content="../assets/img/brazo_preview.jpg" />
-  <link rel="stylesheet" href="estilos.css">
+  <title>Pequeños Ingenieros — Retos STEM para Padres e Hijos</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Pequeños Ingenieros: retos STEM para padres e hijos, proyectos educativos, tiempo de calidad y aprendizaje divertido. Construye, aprende y comparte.">
+  <meta property="og:title" content="Pequeños Ingenieros — Retos STEM para Padres e Hijos">
+  <meta property="og:description" content="Desafíos, misiones y proyectos STEM para hacer en familia. Comparte tus resultados y reta a otros padres.">
+  <meta property="og:image" content="assets/img/preview.jpg">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="p-header">
-    <div class="wrap">
-      <div class="brand"> <div class="logo">PI</div>
-        <div>
-          <h1>Proyecto 001 — Brazo Hidráulico</h1>
-          <p class="lead">Construye un brazo hidráulico con tu hijo y aprende hidráulica básica jugando.</p>
-        </div>
-      </div>
-      <nav class="actions">
-        <a class="btn" href="../index.html">← Volver</a>
-        <a class="btn ghost" href="#" id="shareBtn">Compartir</a>
-      </nav>
-    </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Pequeños Ingenieros</h1>
+    <p>Retos STEM para padres e hijos: aprende, construye y comparte tiempo de calidad.</p>
+    <button class="btn" onclick="compartirSitio()">Reta a otro papá 💪</button>
   </header>
 
-  <main class="wrap layout">
-    
-    <article class="card main-card">
-      <div class="card main-card-margin-1px">
-        <h3>Descripción</h3>
-        <p>El Brazo Hidráulico es un proyecto seguro y divertido para que niños y padres exploren principios de hidráulica — presión, volumen y control de movimiento — usando jeringas, mangueras y cartón.</p>
-    </div>
-      
-      <div class="card main-card-margin-1px">
-        <h3>💡 ¿Por qué este reto?</h3>
-      <p>Porque los niños no recuerdan el celular que tenías…Pero sí recuerdan el día en que hicieron un invento contigo.</p>
-    </div>
-    </article>
-      
-    <article class="card main-card">
-      <h3>Materiales</h3>
-      <ul class="materials">
-        <li>Cartón reciclado (lámina 2 mm)</li>
-        <li>Jeringas plásticas (3) — sin aguja</li>
-        <li>Mangueras transparentes (3)</li>
-        <li>Palillos o broches (4)</li>
-        <li>Pegamento blanco y cinta adhesiva</li>
-        <li>Agua con colorante (opcional)</li>
-      </ul>
-    </article>
-    
-    <div class="replicate">
-        <a class="btn" href="../assets/pdf/plantilla_brazo.pdf" download>Descargar plantilla PDF</a>
-        <button class="btn" id="btnShareReto">Compartir reto</button>
+  <div class="container">
+
+    <!-- BUSCADOR -->
+    <section class="search-box">
+      <input type="text" id="buscador" placeholder="Buscar proyectos, retos o materiales...">
+    </section>
+
+    <!-- GRID DE PROYECTOS -->
+    <section class="seccion">
+      <h2>Proyectos Destacados</h2>
+
+      <div class="grid" id="contenedor-proyectos">
+        <!-- Se llenará desde app.js -->
       </div>
+    </section>
 
-      <h3>Pasos</h3>
-      <ol class="steps" id="steps">
-        <li data-step="1">Preparar las piezas de cartón según la plantilla.</li>
-        <li data-step="2">Ensamblar la base y el brazo con pegamento y palillos como pivotes.</li>
-        <li data-step="3">Instalar jeringas y mangueras conectando el circuito hidráulico.</li>
-        <li data-step="4">Llenar con agua coloreada y ajustar el sistema.</li>
-        <li data-step="5">Probar movimientos y decorar.</li>
-      </ol>
-
-      <div class="progress">Progreso: <span id="progressPercent">0%</span></div>
-    </article>
-
-    <aside class="card side-card">
-      <h4>Galería</h4>
-      <div class="gallery" id="gallery">
-        <div class="thumb"><img src="../assets/img/proyecto001-brazo-hidraulico/brazo-hidraulico-foto-1.jpg" alt="Brazo Hidráulico 1"></div>
-        <div class="thumb"><img src="../assets/img/proyecto001-brazo-hidraulico/brazo-hidraulico-foto-2.jpg" alt="Brazo Hidráulico 2"></div>
-        <div class="thumb"><img src="../assets/img/proyecto001-brazo-hidraulico/brazo-hidraulico-plantilla-2.jpg" alt="Brazo Hudráulico Plantilla"></div>
+    <!-- SECCIÓN PRESENTACIÓN -->
+    <section class="seccion">
+      <h2>¿Qué es Pequeños Ingenieros?</h2>
+      <div class="card">
+        <p>
+          Pequeños Ingenieros nació del deseo de crear 
+          <strong>momentos de calidad entre padre e hijo</strong> mediante proyectos STEM simples,
+          seguros y divertidos.  
+        </p>
+        <p>
+          Cada reto está diseñado para construir juntos, aprender jugando y compartir los resultados
+          en comunidad. La misión es formar niños creativos, seguros y con pensamiento científico.
+        </p>
+        <p>Este proyecto está construido en código abierto para que pueda crecer con tu ayuda.</p>
       </div>
-    
-    <article class="card main-card">
+    </section>
 
-        <div class="card main-card-margin-1px">
-        <aside class="card side-card">
-          <h4>Recursos</h4>
-          <ul class="meta-list">
-            <li><p><a href="../assets/pdf/proyecto001/parte1-plantilla-brazo-hidraulico.pdf" download>Plantilla de corte PDF (PARTE-1)</a></p></li>
-            <li><p><a href="../assets/pdf/proyecto001/parte2-plantilla-brazo-hidraulico.pdf" download>Plantilla de corte PDF (PARTE-2)</a></p></li>
-            <li><p><a href="../assets/pdf/proyecto001/parte3-plantilla-brazo-hidraulico.pdf" download>Plantilla de corte PDF (PARTE-3)</a></p></li>
-            <li><p><a href="#" id="videoBtn">Video tutorial (sin video aun)</a></p></li>
-            <li><p><a href="../manual-desarrollador.md">Manual del desarrollador</a></p></li>
-          </ul>
-         </aside>
-        </div>
-        </article>
+    <!-- SECCIÓN RETO SOCIAL -->
+    <section class="seccion">
+      <h2>Reto del Día: Construye y Comparte 🛠️</h2>
+      <div class="card">
+        <p>Haz el proyecto con tu hijo, tomen una foto y compártanla en redes etiquetando:</p>
+        <p><strong>#PequeñosIngenieros</strong></p>
+        <p>Después... ¡Reta a otro papá para que también pase tiempo de calidad con sus hijos!</p>
+        <button class="btn" onclick="compartirReto()">Compartir el Reto 📣</button>
+      </div>
+    </section>
 
-  </main>
-
-  <footer class="p-footer">
-    <div class="wrap"> © 2025 Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 México (CC BY-NC-SA 4.0). · By ISC.Miguel Angel Ruiz Ramirez - Quecholac, Puebla MX</div>
-  </footer>
-
-  <!-- Modal imagen -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <img id="modalImg" src="" alt="">
   </div>
+
+  <footer>
+    © 2025 Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 México (CC BY-NC-SA 4.0).
+ · By ISC.Miguel Angel Ruiz Ramirez - Quecholac, Puebla MX
+  </footer>
 
   <script src="app.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
