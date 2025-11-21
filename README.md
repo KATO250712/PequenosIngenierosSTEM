@@ -30,13 +30,9 @@ pero sí recordarán lo que construyeron contigo.
 - `public/`: Archivos HTML, CSS, JS y recursos estáticos.  
 - `src/`: Código fuente organizado en módulos.  
 - `docs/`: Documentación del proyecto (uso, contribución, roadmap).
-- 
-
+  
 ---
-
-## 🚀 Cómo empeza
-
-
+## 🚀 Cómo empezar
 
 ---
 
@@ -72,8 +68,8 @@ Ver LICENSE para más información.
 
 ---
 
-**Contacto:** Miguel Ángel Ruiz Ramírez  
-**LinkedIn:** [LinkedIn](https://www.linkedin.com/in/miguel-angel-ruiz-ramirez-8a5991370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+**Contacto:** Miguel Ángel Ruiz Ramírez   [LinkedIn](https://www.linkedin.com/in/miguel-angel-ruiz-ramirez-8a5991370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+
 
 
 
