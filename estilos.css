@@ -1,4 +1,3 @@
-/* estilos para proyecto 001 - Brazo Hidráulico */
 :root{
   --bg:#f7f9fb; --card:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-dark:#0b7272; --accent2:#ff8c42; --max:980px; --radius:12px;
 }
@@ -62,5 +61,6 @@ a{color:inherit}
 @media(max-width:520px){
   .gallery{grid-template-columns:repeat(2,1fr)}
 }
+
 
 
