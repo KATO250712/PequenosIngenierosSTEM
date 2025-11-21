@@ -1,73 +1,85 @@
-// ##############################################
-// Pequeños Ingenieros - app.js final
-// Render de proyectos • Buscador • Compartir
-// ##############################################
+// app.js - Proyecto 001 (Brazo Hidráulico)
+// Funcionalidades: pasos gamificados, progreso, galería modal, compartir, confeti
 
-const proyectos = [
-  {
-    id: "001",
-    titulo: "Brazo Hidráulico",
-    desc: "Reto familiar: construyan juntos un brazo hidráulico casero y diviértanse mientras aprenden STEM",
-    link: "proyecto001/index.html"
-  },{
-    id: "002",
-    titulo: "Puente Elevadizo",
-    desc: "Mecánica simple y poleas (proximo reto)",
-    link: "#"
+// --- Helpers confeti
+function lanzarConfeti(){
+  const total = 40;
+  for(let i=0;i<total;i++){
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random()*100 + 'vw';
+    c.style.top = '-10vh';
+    c.style.background = `hsl(${Math.random()*360},70%,50%)`;
+    c.style.transform = `rotate(${Math.random()*360}deg)`;
+    document.body.appendChild(c);
+    c.style.transition = 'transform 1.6s linear, top 1.6s linear, opacity 1.6s linear';
+    requestAnimationFrame(()=>{
+      c.style.top = (80 + Math.random()*30) + 'vh';
+      c.style.opacity = 0;
+    });
+    setTimeout(()=>c.remove(),1800);
   }
-];
-
-// Render dinámico
-function cargarProyectos(){
-  const cont = document.getElementById("contenedor-proyectos");
-  cont.innerHTML = "";
-
-  proyectos.forEach(p=>{
-    cont.innerHTML += `
-      <a href="${p.link}" class="card">
-        <h3>${p.titulo}</h3>
-        <p>${p.desc}</p>
-      </a>
-    `;
-  });
 }
 
-// Buscador
-document.getElementById("buscador")?.addEventListener("input", e=>{
-  const q = e.target.value.toLowerCase();
-  const cards = document.querySelectorAll(".card");
+// --- Pasos interactivos y progreso
+const steps = document.querySelectorAll('#steps li');
+const progressEl = document.getElementById('progressPercent');
 
-  cards.forEach(c=>{
-    const text = c.textContent.toLowerCase();
-    c.style.display = text.includes(q) ? "block" : "none";
+function actualizarProgreso(){
+  const total = steps.length;
+  const done = [...steps].filter(s=>s.classList.contains('completed')).length;
+  const pct = Math.round((done/total)*100);
+  progressEl.textContent = pct + '%';
+  if(pct === 100) lanzarConfeti();
+}
+
+steps.forEach(li=>{
+  li.addEventListener('click', ()=>{
+    li.classList.toggle('completed');
+    actualizarProgreso();
   });
 });
+actualizarProgreso();
 
-// Compartir sitio
-function compartirSitio(){
+// --- Galería modal
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+const thumbs = document.querySelectorAll('.thumb img');
+thumbs.forEach(img=>{
+  img.addEventListener('click', ()=>{
+    modalImg.src = img.src;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+  });
+});
+modal.addEventListener('click', ()=>{
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden','true');
+});
+
+// --- Compartir
+const shareBtn = document.getElementById('shareBtn');
+const btnShareReto = document.getElementById('btnShareReto');
+
+function compartirTexto(){
+  const datos = {
+    title: 'Reto: Brazo Hidráulico',
+    text: 'Construye un brazo hidráulico con tu hijo hoy. Mira los pasos y comparte tu resultado en #PequeñosIngenieros',
+    url: window.location.href
+  };
   if(navigator.share){
-    navigator.share({
-      title:"Pequeños Ingenieros",
-      text:"Reto para padres: construye un proyecto STEM con tus hijos hoy.",
-      url:window.location.href
-    });
+    navigator.share(datos).catch(()=>{});
   } else {
-    alert("Tu dispositivo no soporta compartir.");
+    // fallback: copiar al portapapeles
+    navigator.clipboard?.writeText(`${datos.title} - ${datos.url}`);
+    alert('Enlace copiado al portapapeles. ¡Compártelo en tus redes!');
   }
 }
+shareBtn?.addEventListener('click', compartirTexto);
+btnShareReto?.addEventListener('click', compartirTexto);
 
-// Compartir reto
-function compartirReto(){
-  if(navigator.share){
-    navigator.share({
-      title:"Reto STEM — Pequeños Ingenieros",
-      text:"Te reto a construir un proyecto con tus hijos. Aquí están las ideas:",
-      url:window.location.href
-    });
-  }
-}
-
-// Inicialización
-document.addEventListener("DOMContentLoaded", cargarProyectos);
-
-
+// --- Inicialización simple
+window.addEventListener('load', ()=>{
+  // accesibilidad: permitir cerrar modal con ESC
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') modal.classList.remove('show'); });
+});
